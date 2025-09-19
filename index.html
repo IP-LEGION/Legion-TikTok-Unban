@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legion TikTok Unban Appeal Generator</title>
+    <title>Ultimate TikTok Unban Appeal Generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -107,9 +107,166 @@
             margin: 0 auto 20px;
         }
         
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            padding: 15px 30px;
+            background: rgba(5, 18, 31, 0.7);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--light);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 968px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-section, .preview-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        select, input, textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 242, 254, 0.3);
+            background: rgba(5, 18, 31, 0.7);
+            color: var(--light);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        select:focus, input:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+            text-decoration: none;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 242, 254, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-top: 15px;
+        }
+        
+        .preview-box {
+            background: rgba(5, 18, 31, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 300px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            margin-bottom: 25px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+        
+        .email-preview {
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+        
+        .email-meta {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+        }
+        
         .search-box {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
             position: relative;
         }
         
@@ -575,6 +732,10 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .tabs {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -584,10 +745,10 @@
     <div class="container">
         <header>
             <div class="logo">
-                <div class="logo-icon"><i class="fas fa-envelope"></i></div>
-                <h1 class="typewriter">TikTok Support Email Directory</h1>
+                <div class="logo-icon"><i class="fas fa-lock-open"></i></div>
+                <h1 class="typewriter">Ultimate TikTok Unban Solution</h1>
             </div>
-            <p class="subtitle">Find the right TikTok support email for your specific issue. This comprehensive directory includes all official TikTok support channels for account appeals, legal requests, and more.</p>
+            <p class="subtitle">Generate professional appeal emails and find the right TikTok support contacts to get your account unbanned quickly</p>
             
             <div class="channels">
                 <a href="https://whatsapp.com/channel/0029VbAaOJLInlqVwhwtxS33" target="_blank" class="channel-btn whatsapp">
@@ -599,239 +760,301 @@
                     Join Telegram Channel
                 </a>
             </div>
-            
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="appeal-generator"><i class="fas fa-envelope"></i> Appeal Generator</button>
+            <button class="tab-btn" data-tab="email-directory"><i class="fas fa-address-book"></i> Email Directory</button>
+        </div>
+        
+        <div class="tab-content active" id="appeal-generator">
+            <div class="app-container">
+                <div class="form-section">
+                    <h2 class="section-title"><i class="fas fa-cog"></i> Configure Your Appeal</h2>
+                    
+                    <div class="form-group">
+                        <label for="ban-type"><i class="fas fa-ban"></i> Type of Ban</label>
+                        <select id="ban-type">
+                            <option value="">Select your ban type</option>
+                            <option value="shadowban">Shadowban (Limited reach)</option>
+                            <option value="temporary">Temporary Suspension</option>
+                            <option value="permanent">Permanent Ban</option>
+                            <option value="video">Video Removal</option>
+                            <option value="live">Live Streaming Ban</option>
+                            <option value="comment">Commenting Ban</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user"></i> TikTok Username</label>
+                        <input type="text" id="username" placeholder="Enter your @username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-info"><i class="fas fa-info-circle"></i> Additional Information (Optional)</label>
+                        <textarea id="additional-info" placeholder="Add any relevant details about your situation..."></textarea>
+                    </div>
+                    
+                    <button id="generate-btn" class="btn"><i class="fas fa-magic"></i> Generate Appeal Email</button>
+                    <button id="reset-btn" class="btn btn-outline"><i class="fas fa-redo"></i> Reset Form</button>
+                </div>
+                
+                <div class="preview-section">
+                    <h2 class="section-title"><i class="fas fa-envelope"></i> Email Preview</h2>
+                    
+                    <div class="preview-box">
+                        <div class="email-meta">
+                            <div><strong>To:</strong> <span id="preview-to">support@tiktok.com</span></div>
+                            <div><strong>Subject:</strong> <span id="preview-subject">Appeal for Banned TikTok Account</span></div>
+                        </div>
+                        <div class="email-preview" id="email-preview">
+                            Your generated appeal will appear here. Please select your ban type and click "Generate Appeal Email".
+                        </div>
+                    </div>
+                    
+                    <a id="send-email" class="btn" style="display: none;"><i class="fas fa-paper-plane"></i> Open in Email Client</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="email-directory">
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" id="search-input" placeholder="Search for specific issues or email addresses...">
             </div>
-        </header>
-        
-        <div class="categories">
-            <button class="category-btn active" data-category="all">All Emails</button>
-            <button class="category-btn" data-category="account">Account Issues</button>
-            <button class="category-btn" data-category="legal">Legal & Business</button>
-            <button class="category-btn" data-category="content">Content & Copyright</button>
-            <button class="category-btn" data-category="security">Security</button>
-        </div>
-        
-        <div class="email-grid" id="email-grid">
-            <!-- Account Issues -->
-            <div class="email-card" data-category="account">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-ban"></i></div>
-                    <h3 class="email-title">Account Bans & Suspensions</h3>
-                </div>
-                <div class="email-address">
-                    <span>appeal@tiktok.com</span>
-                    <button class="copy-btn" data-email="appeal@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">Contact for appealing account bans, suspensions, or restrictions. Include your username and details about your issue.</p>
-                <div class="email-meta">
-                    <span class="email-category">Account Issues</span>
-                    <div class="action-buttons">
-                        <a href="mailto:appeal@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
-                    </div>
-                </div>
+            
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All Emails</button>
+                <button class="category-btn" data-category="account">Account Issues</button>
+                <button class="category-btn" data-category="legal">Legal & Business</button>
+                <button class="category-btn" data-category="content">Content & Copyright</button>
+                <button class="category-btn" data-category="security">Security</button>
             </div>
             
-            <div class="email-card" data-category="account">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-lock"></i></div>
-                    <h3 class="email-title">General Account Support</h3>
-                </div>
-                <div class="email-address">
-                    <span>info@tiktok.com</span>
-                    <button class="copy-btn" data-email="info@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For general account inquiries, login issues, and other account-related problems not involving bans.</p>
-                <div class="email-meta">
-                    <span class="email-category">Account Issues</span>
-                    <div class="action-buttons">
-                        <a href="mailto:info@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+            <div class="email-grid" id="email-grid">
+                <!-- Account Issues -->
+                <div class="email-card" data-category="account">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-ban"></i></div>
+                        <h3 class="email-title">Account Bans & Suspensions</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>appeal@tiktok.com</span>
+                        <button class="copy-btn" data-email="appeal@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">Contact for appealing account bans, suspensions, or restrictions. Include your username and details about your issue.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Account Issues</span>
+                        <div class="action-buttons">
+                            <a href="mailto:appeal@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Legal & Business -->
-            <div class="email-card" data-category="legal">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-gavel"></i></div>
-                    <h3 class="email-title">Legal Inquiries</h3>
-                </div>
-                <div class="email-address">
-                    <span>legal@tiktok.com</span>
-                    <button class="copy-btn" data-email="legal@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For legal matters, law enforcement requests, subpoenas, and other legal inquiries.</p>
-                <div class="email-meta">
-                    <span class="email-category">Legal & Business</span>
-                    <div class="action-buttons">
-                        <a href="mailto:legal@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="account">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-lock"></i></div>
+                        <h3 class="email-title">General Account Support</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>info@tiktok.com</span>
+                        <button class="copy-btn" data-email="info@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For general account inquiries, login issues, and other account-related problems not involving bans.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Account Issues</span>
+                        <div class="action-buttons">
+                            <a href="mailto:info@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="email-card" data-category="legal">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="email-title">Business & Partnerships</h3>
-                </div>
-                <div class="email-address">
-                    <span>business-services@tiktok.com</span>
-                    <button class="copy-btn" data-email="business-services@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For business inquiries, partnership opportunities, advertising, and collaboration requests.</p>
-                <div class="email-meta">
-                    <span class="email-category">Legal & Business</span>
-                    <div class="action-buttons">
-                        <a href="mailto:business-services@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <!-- Legal & Business -->
+                <div class="email-card" data-category="legal">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-gavel"></i></div>
+                        <h3 class="email-title">Legal Inquiries</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>legal@tiktok.com</span>
+                        <button class="copy-btn" data-email="legal@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For legal matters, law enforcement requests, subpoenas, and other legal inquiries.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Legal & Business</span>
+                        <div class="action-buttons">
+                            <a href="mailto:legal@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="email-card" data-category="legal">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-newspaper"></i></div>
-                    <h3 class="email-title">Press & Media</h3>
-                </div>
-                <div class="email-address">
-                    <span>pr@tiktok.com</span>
-                    <button class="copy-btn" data-email="pr@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For press inquiries, media requests, interviews, and official statements.</p>
-                <div class="email-meta">
-                    <span class="email-category">Legal & Business</span>
-                    <div class="action-buttons">
-                        <a href="mailto:pr@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="legal">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="email-title">Business & Partnerships</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>business-services@tiktok.com</span>
+                        <button class="copy-btn" data-email="business-services@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For business inquiries, partnership opportunities, advertising, and collaboration requests.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Legal & Business</span>
+                        <div class="action-buttons">
+                            <a href="mailto:business-services@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Content & Copyright -->
-            <div class="email-card" data-category="content">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-copyright"></i></div>
-                    <h3 class="email-title">Copyright Issues</h3>
-                </div>
-                <div class="email-address">
-                    <span>copyright@tiktok.com</span>
-                    <button class="copy-btn" data-email="copyright@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For reporting copyright infringement, DMCA takedown requests, and intellectual property issues.</p>
-                <div class="email-meta">
-                    <span class="email-category">Content & Copyright</span>
-                    <div class="action-buttons">
-                        <a href="mailto:copyright@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="legal">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-newspaper"></i></div>
+                        <h3 class="email-title">Press & Media</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>pr@tiktok.com</span>
+                        <button class="copy-btn" data-email="pr@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For press inquiries, media requests, interviews, and official statements.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Legal & Business</span>
+                        <div class="action-buttons">
+                            <a href="mailto:pr@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="email-card" data-category="content">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-flag"></i></div>
-                    <h3 class="email-title">Content Reporting</h3>
-                </div>
-                <div class="email-address">
-                    <span>report@tiktok.com</span>
-                    <button class="copy-btn" data-email="report@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For reporting inappropriate content, violations of community guidelines, and abusive behavior.</p>
-                <div class="email-meta">
-                    <span class="email-category">Content & Copyright</span>
-                    <div class="action-buttons">
-                        <a href="mailto:report@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <!-- Content & Copyright -->
+                <div class="email-card" data-category="content">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-copyright"></i></div>
+                        <h3 class="email-title">Copyright Issues</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>copyright@tiktok.com</span>
+                        <button class="copy-btn" data-email="copyright@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For reporting copyright infringement, DMCA takedown requests, and intellectual property issues.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Content & Copyright</span>
+                        <div class="action-buttons">
+                            <a href="mailto:copyright@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="email-card" data-category="content">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-creative-commons"></i></div>
-                    <h3 class="email-title">Content Creator Support</h3>
-                </div>
-                <div class="email-address">
-                    <span>creators@tiktok.com</span>
-                    <button class="copy-btn" data-email="creators@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For content creator support, verification requests, and creator fund inquiries.</p>
-                <div class="email-meta">
-                    <span class="email-category">Content & Copyright</span>
-                    <div class="action-buttons">
-                        <a href="mailto:creators@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="content">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-flag"></i></div>
+                        <h3 class="email-title">Content Reporting</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>report@tiktok.com</span>
+                        <button class="copy-btn" data-email="report@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For reporting inappropriate content, violations of community guidelines, and abusive behavior.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Content & Copyright</span>
+                        <div class="action-buttons">
+                            <a href="mailto:report@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Security -->
-            <div class="email-card" data-category="security">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="email-title">Security Issues</h3>
-                </div>
-                <div class="email-address">
-                    <span>security@tiktok.com</span>
-                    <button class="copy-btn" data-email="security@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For reporting security vulnerabilities, privacy concerns, and data protection issues.</p>
-                <div class="email-meta">
-                    <span class="email-category">Security</span>
-                    <div class="action-buttons">
-                        <a href="mailto:security@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="content">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-creative-commons"></i></div>
+                        <h3 class="email-title">Content Creator Support</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>creators@tiktok.com</span>
+                        <button class="copy-btn" data-email="creators@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For content creator support, verification requests, and creator fund inquiries.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Content & Copyright</span>
+                        <div class="action-buttons">
+                            <a href="mailto:creators@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="email-card" data-category="security">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3 class="email-title">Privacy Concerns</h3>
-                </div>
-                <div class="email-address">
-                    <span>privacy@tiktok.com</span>
-                    <button class="copy-btn" data-email="privacy@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For privacy-related inquiries, data deletion requests, and privacy policy questions.</p>
-                <div class="email-meta">
-                    <span class="email-category">Security</span>
-                    <div class="action-buttons">
-                        <a href="mailto:privacy@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <!-- Security -->
+                <div class="email-card" data-category="security">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="email-title">Security Issues</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>security@tiktok.com</span>
+                        <button class="copy-btn" data-email="security@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For reporting security vulnerabilities, privacy concerns, and data protection issues.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Security</span>
+                        <div class="action-buttons">
+                            <a href="mailto:security@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Additional Emails -->
-            <div class="email-card" data-category="account">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-money-bill-wave"></i></div>
-                    <h3 class="email-title">Monetization & Payments</h3>
-                </div>
-                <div class="email-address">
-                    <span>payments@tiktok.com</span>
-                    <button class="copy-btn" data-email="payments@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For issues related to creator payments, monetization, and financial transactions.</p>
-                <div class="email-meta">
-                    <span class="email-category">Account Issues</span>
-                    <div class="action-buttons">
-                        <a href="mailto:payments@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="security">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3 class="email-title">Privacy Concerns</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>privacy@tiktok.com</span>
+                        <button class="copy-btn" data-email="privacy@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For privacy-related inquiries, data deletion requests, and privacy policy questions.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Security</span>
+                        <div class="action-buttons">
+                            <a href="mailto:privacy@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="email-card" data-category="content">
-                <div class="email-header">
-                    <div class="email-icon"><i class="fas fa-trademark"></i></div>
-                    <h3 class="email-title">Trademark Issues</h3>
+                
+                <!-- Additional Emails -->
+                <div class="email-card" data-category="account">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <h3 class="email-title">Monetization & Payments</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>payments@tiktok.com</span>
+                        <button class="copy-btn" data-email="payments@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For issues related to creator payments, monetization, and financial transactions.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Account Issues</span>
+                        <div class="action-buttons">
+                            <a href="mailto:payments@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="email-address">
-                    <span>trademark@tiktok.com</span>
-                    <button class="copy-btn" data-email="trademark@tiktok.com"><i class="fas fa-copy"></i></button>
-                </div>
-                <p class="email-desc">For trademark complaints, brand impersonation, and trademark-related inquiries.</p>
-                <div class="email-meta">
-                    <span class="email-category">Content & Copyright</span>
-                    <div class="action-buttons">
-                        <a href="mailto:trademark@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                
+                <div class="email-card" data-category="content">
+                    <div class="email-header">
+                        <div class="email-icon"><i class="fas fa-trademark"></i></div>
+                        <h3 class="email-title">Trademark Issues</h3>
+                    </div>
+                    <div class="email-address">
+                        <span>trademark@tiktok.com</span>
+                        <button class="copy-btn" data-email="trademark@tiktok.com"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <p class="email-desc">For trademark complaints, brand impersonation, and trademark-related inquiries.</p>
+                    <div class="email-meta">
+                        <span class="email-category">Content & Copyright</span>
+                        <div class="action-buttons">
+                            <a href="mailto:trademark@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -839,7 +1062,7 @@
         
         <footer>
             <p class="disclaimer">Disclaimer: This directory is provided for informational purposes only. Email addresses may change over time, and response times may vary. This site is not affiliated with or endorsed by TikTok.</p>
-            <p>© 2025 TikTok Support Email Directory | Designed for educational purposes</p>
+            <p>© 2023 Ultimate TikTok Unban Solution | Created by Legion</p>
         </footer>
     </div>
 
@@ -914,10 +1137,210 @@
                 }
             });
             
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show active tab content
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Appeal generation functionality
+            const banTypeSelect = document.getElementById('ban-type');
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+            const additionalInfoInput = document.getElementById('additional-info');
+            const generateBtn = document.getElementById('generate-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const emailPreview = document.getElementById('email-preview');
+            const sendEmailLink = document.getElementById('send-email');
+            const previewTo = document.getElementById('preview-to');
+            const previewSubject = document.getElementById('preview-subject');
+            const toast = document.getElementById('toast');
+            
+            // Ban type templates with high-quality appeal messages
+            const appealTemplates = {
+                shadowban: {
+                    subject: "Appeal for Shadowban on TikTok Account",
+                    body: `Dear TikTok Support Team,
+
+I am writing to respectfully appeal what appears to be a shadowban on my TikTok account @{username}. I've noticed a significant decrease in my content's reach and engagement over the past few days.
+
+I have always strived to create original, engaging content that complies with TikTok's Community Guidelines. My account focuses on {describe your content niche} and has built a community of {number} followers who appreciate my content.
+
+I believe this shadowban may have been applied in error, possibly due to:
+- Algorithmic misinterpretation of my content
+- Unexpected spikes in engagement
+- Reports from users who may have misunderstood my content
+
+I would be grateful if you could review my account status and provide guidance on any issues that need to be addressed. I am committed to maintaining a positive presence on TikTok and ensuring my content aligns with platform guidelines.
+
+Thank you for your time and consideration.
+
+Sincerely,
+{email}`
+                },
+
+                temporary: {
+                    subject: "Appeal for Temporary Suspension on TikTok Account",
+                    body: `Dear TikTok Support Team,
+
+I am writing to appeal the temporary suspension of my TikTok account @{username}. I received a notification that my account has been temporarily suspended for violating community guidelines.
+
+I have carefully reviewed TikTok's Community Guidelines and believe this suspension may have been applied in error. The content in question was {briefly describe the content} which I believe complies with platform rules because {explain why it should be allowed}.
+
+If I have inadvertently violated any guidelines, I would appreciate understanding the specific nature of the violation so I can avoid similar issues in the future. I value the TikTok community and want to ensure my content contributes positively to the platform.
+
+I request you to review my case and consider lifting the suspension. Thank you for your understanding.
+
+Sincerely,
+{email}`
+                },
+
+                permanent: {
+                    subject: "Appeal for Permanent Ban on TikTok Account",
+                    body: `Dear TikTok Support Team,
+
+I am writing to formally appeal the permanent ban of my TikTok account @{username}. I received a notification that my account has been permanently banned for violating community guidelines.
+
+I am deeply concerned about this decision as I have invested significant time and effort into building my account and community. I have always strived to create content that aligns with TikTok's guidelines and values.
+
+Upon reflection, I believe this ban may have resulted from:
+{choose applicable options}
+- A misunderstanding of my content's context
+- Reports from users who may have misinterpreted my content
+- An algorithmic error in content classification
+- Unintentional violation due to unclear guideline interpretation
+
+I kindly request a thorough review of my case. If specific violations occurred, I would appreciate understanding them to learn from this experience. I am committed to following all community guidelines and would be grateful for the opportunity to continue sharing content on your platform.
+
+Thank you for your time and consideration.
+
+Sincerely,
+{email}`
+                },
+
+                video: {
+                    subject: "Appeal for Video Removal on TikTok Account",
+                    body: `Dear TikTok Support Team,
+
+I am writing to appeal the removal of my video on TikTok account @{username}. I received a notification that my video was removed for violating community guidelines.
+
+After careful review of TikTok's Community Guidelines, I believe this removal may have been in error. The video in question was about {describe video content} and was intended to {explain purpose}.
+
+I believe this content complies with platform guidelines because:
+- It does not contain hate speech, harassment, or bullying
+- It respects intellectual property rights
+- It aligns with TikTok's values of creativity and expression
+
+I would be grateful if you could review this decision and consider reinstating my video. If there is a specific policy I violated, I would appreciate clarification to avoid similar issues in the future.
+
+Thank you for your attention to this matter.
+
+Sincerely,
+{email}`
+                },
+
+                live: {
+                    subject: "Appeal for Live Streaming Restriction on TikTok Account",
+                    body: `Dear TikTok Support Team,
+
+I am writing to appeal the live streaming restriction on my TikTok account @{username}. I received a notification that my live streaming capabilities have been suspended due to violations of community guidelines.
+
+I enjoy connecting with my audience through live streams and always strive to maintain a positive and appropriate broadcasting environment. I believe this restriction may have been applied in error during my recent live stream about {topic}.
+
+The content of my live stream focused on {describe content} and was intended to {purpose}. I ensured that:
+- All participants followed community guidelines
+- The conversation remained respectful and appropriate
+- The content was suitable for a general audience
+
+I would appreciate it if you could review my case and provide more information about the specific violation. I am committed to following all guidelines and would be grateful for the opportunity to restore my live streaming privileges.
+
+Thank you for your consideration.
+
+Sincerely,
+{email}`
+                },
+
+                comment: {
+                    subject: "Appeal for Commenting Restriction on TikTok Account",
+                    body: `Dear TikTok Support Team,
+
+I am writing to appeal the commenting restriction on my TikTok account @{username}. I received a notification that my ability to comment has been suspended due to violations of community guidelines.
+
+I value the TikTok community and always strive to contribute positively to discussions. I believe this restriction may have been applied in error to my comment on {video topic} which said "{comment content}".
+
+This comment was intended to {explain intention} and I believe it was misinterpreted. I understand the importance of maintaining a respectful environment and would never intentionally violate community guidelines.
+
+If my comment did violate guidelines, I would appreciate understanding the specific issue so I can avoid similar mistakes in the future. I request you to review my case and consider lifting the restriction.
+
+Thank you for your time and attention.
+
+Sincerely,
+{email}`
+                }
+            };
+            
+            // Generate appeal email
+            generateBtn.addEventListener('click', function() {
+                const banType = banTypeSelect.value;
+                const username = usernameInput.value.trim() || '@your_username';
+                const email = emailInput.value.trim() || 'your@email.com';
+                const additionalInfo = additionalInfoInput.value.trim();
+                
+                if (!banType) {
+                    showToast('Please select a ban type first');
+                    return;
+                }
+                
+                const template = appealTemplates[banType];
+                let appealText = template.body;
+                appealText = appealText.replace(/{username}/g, username);
+                appealText = appealText.replace(/{email}/g, email);
+                
+                if (additionalInfo) {
+                    appealText += `\n\nAdditional Information: ${additionalInfo}`;
+                }
+                
+                emailPreview.textContent = appealText;
+                sendEmailLink.style.display = 'flex';
+                previewSubject.textContent = template.subject;
+                
+                // Set up mailto link
+                const subject = encodeURIComponent(template.subject);
+                const body = encodeURIComponent(appealText);
+                sendEmailLink.href = `mailto:appeal@tiktok.com?subject=${subject}&body=${body}`;
+                
+                showToast('Appeal generated successfully!');
+            });
+            
+            // Reset form
+            resetBtn.addEventListener('click', function() {
+                banTypeSelect.value = '';
+                usernameInput.value = '';
+                emailInput.value = '';
+                additionalInfoInput.value = '';
+                emailPreview.textContent = 'Your generated appeal will appear here. Please select your ban type and click "Generate Appeal Email".';
+                previewSubject.textContent = 'Appeal for Banned TikTok Account';
+                previewTo.textContent = 'support@tiktok.com';
+                sendEmailLink.style.display = 'none';
+                showToast('Form has been reset');
+            });
+            
+            // Email directory functionality
             const categoryButtons = document.querySelectorAll('.category-btn');
             const emailCards = document.querySelectorAll('.email-card');
             const searchInput = document.getElementById('search-input');
-            const toast = document.getElementById('toast');
             const statsBtn = document.getElementById('stats-btn');
             const statsModal = document.getElementById('stats-modal');
             const closeModal = document.getElementById('close-modal');
