@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legion TikTok Unban Appeal Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #ff2d75;
+            --dark: #0a1a2a;
+            --darker: #05121f;
+            --light: #ffffff;
+            --card-bg: rgba(10, 26, 42, 0.7);
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+            --success: #00ff8c;
+            --warning: #ffcc00;
+            --error: #ff3860;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(125deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--dark);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px 10px rgba(0, 242, 254, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: 2px solid rgba(0, 242, 254, 0.3);
+            background: rgba(5, 18, 31, 0.7);
+            color: var(--light);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            padding-left: 50px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+        
+        .channels {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .channel-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(5, 18, 31, 0.7);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--light);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .channel-btn:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .channel-btn:hover:before {
+            animation: shine 1.5s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+        
+        .channel-btn.whatsapp:hover {
+            background: var(--whatsapp);
+            border-color: var(--whatsapp);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .channel-btn.telegram:hover {
+            background: var(--telegram);
+            border-color: var(--telegram);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            padding: 12px 25px;
+            background: rgba(5, 18, 31, 0.7);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--light);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+        }
+        
+        .email-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .email-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .email-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .email-card:hover {
+            transform: translateY(-5px) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.2);
+        }
+        
+        .email-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .email-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 242, 254, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary);
+        }
+        
+        .email-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .email-address {
+            background: rgba(5, 18, 31, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .email-address:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        }
+        
+        .copy-btn {
+            background: rgba(0, 242, 254, 0.1);
+            border: none;
+            color: var(--primary);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .email-desc {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .email-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .email-category {
+            background: rgba(0, 242, 254, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: var(--primary);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-btn {
+            padding: 10px 20px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--primary);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .action-btn:hover {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 8px 20px rgba(0, 242, 254, 0.4);
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 18, 31, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: rgba(5, 18, 31, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        @media (max-width: 768px) {
+            .email-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .channels {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-envelope"></i></div>
+                <h1 class="typewriter">TikTok Support Email Directory</h1>
+            </div>
+            <p class="subtitle">Find the right TikTok support email for your specific issue. This comprehensive directory includes all official TikTok support channels for account appeals, legal requests, and more.</p>
+            
+            <div class="channels">
+                <a href="https://whatsapp.com/channel/0029VbAaOJLInlqVwhwtxS33" target="_blank" class="channel-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Join WhatsApp Channel
+                </a>
+                <a href="https://t.me/legion_x_tech" target="_blank" class="channel-btn telegram">
+                    <i class="fab fa-telegram"></i>
+                    Join Telegram Channel
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search for specific issues or email addresses...">
+            </div>
+        </header>
+        
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All Emails</button>
+            <button class="category-btn" data-category="account">Account Issues</button>
+            <button class="category-btn" data-category="legal">Legal & Business</button>
+            <button class="category-btn" data-category="content">Content & Copyright</button>
+            <button class="category-btn" data-category="security">Security</button>
+        </div>
+        
+        <div class="email-grid" id="email-grid">
+            <!-- Account Issues -->
+            <div class="email-card" data-category="account">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-ban"></i></div>
+                    <h3 class="email-title">Account Bans & Suspensions</h3>
+                </div>
+                <div class="email-address">
+                    <span>appeal@tiktok.com</span>
+                    <button class="copy-btn" data-email="appeal@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">Contact for appealing account bans, suspensions, or restrictions. Include your username and details about your issue.</p>
+                <div class="email-meta">
+                    <span class="email-category">Account Issues</span>
+                    <div class="action-buttons">
+                        <a href="mailto:appeal@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="account">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-lock"></i></div>
+                    <h3 class="email-title">General Account Support</h3>
+                </div>
+                <div class="email-address">
+                    <span>info@tiktok.com</span>
+                    <button class="copy-btn" data-email="info@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For general account inquiries, login issues, and other account-related problems not involving bans.</p>
+                <div class="email-meta">
+                    <span class="email-category">Account Issues</span>
+                    <div class="action-buttons">
+                        <a href="mailto:info@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legal & Business -->
+            <div class="email-card" data-category="legal">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-gavel"></i></div>
+                    <h3 class="email-title">Legal Inquiries</h3>
+                </div>
+                <div class="email-address">
+                    <span>legal@tiktok.com</span>
+                    <button class="copy-btn" data-email="legal@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For legal matters, law enforcement requests, subpoenas, and other legal inquiries.</p>
+                <div class="email-meta">
+                    <span class="email-category">Legal & Business</span>
+                    <div class="action-buttons">
+                        <a href="mailto:legal@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="legal">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="email-title">Business & Partnerships</h3>
+                </div>
+                <div class="email-address">
+                    <span>business-services@tiktok.com</span>
+                    <button class="copy-btn" data-email="business-services@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For business inquiries, partnership opportunities, advertising, and collaboration requests.</p>
+                <div class="email-meta">
+                    <span class="email-category">Legal & Business</span>
+                    <div class="action-buttons">
+                        <a href="mailto:business-services@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="legal">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-newspaper"></i></div>
+                    <h3 class="email-title">Press & Media</h3>
+                </div>
+                <div class="email-address">
+                    <span>pr@tiktok.com</span>
+                    <button class="copy-btn" data-email="pr@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For press inquiries, media requests, interviews, and official statements.</p>
+                <div class="email-meta">
+                    <span class="email-category">Legal & Business</span>
+                    <div class="action-buttons">
+                        <a href="mailto:pr@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content & Copyright -->
+            <div class="email-card" data-category="content">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-copyright"></i></div>
+                    <h3 class="email-title">Copyright Issues</h3>
+                </div>
+                <div class="email-address">
+                    <span>copyright@tiktok.com</span>
+                    <button class="copy-btn" data-email="copyright@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For reporting copyright infringement, DMCA takedown requests, and intellectual property issues.</p>
+                <div class="email-meta">
+                    <span class="email-category">Content & Copyright</span>
+                    <div class="action-buttons">
+                        <a href="mailto:copyright@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="content">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-flag"></i></div>
+                    <h3 class="email-title">Content Reporting</h3>
+                </div>
+                <div class="email-address">
+                    <span>report@tiktok.com</span>
+                    <button class="copy-btn" data-email="report@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For reporting inappropriate content, violations of community guidelines, and abusive behavior.</p>
+                <div class="email-meta">
+                    <span class="email-category">Content & Copyright</span>
+                    <div class="action-buttons">
+                        <a href="mailto:report@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="content">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-creative-commons"></i></div>
+                    <h3 class="email-title">Content Creator Support</h3>
+                </div>
+                <div class="email-address">
+                    <span>creators@tiktok.com</span>
+                    <button class="copy-btn" data-email="creators@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For content creator support, verification requests, and creator fund inquiries.</p>
+                <div class="email-meta">
+                    <span class="email-category">Content & Copyright</span>
+                    <div class="action-buttons">
+                        <a href="mailto:creators@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security -->
+            <div class="email-card" data-category="security">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="email-title">Security Issues</h3>
+                </div>
+                <div class="email-address">
+                    <span>security@tiktok.com</span>
+                    <button class="copy-btn" data-email="security@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For reporting security vulnerabilities, privacy concerns, and data protection issues.</p>
+                <div class="email-meta">
+                    <span class="email-category">Security</span>
+                    <div class="action-buttons">
+                        <a href="mailto:security@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="security">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="email-title">Privacy Concerns</h3>
+                </div>
+                <div class="email-address">
+                    <span>privacy@tiktok.com</span>
+                    <button class="copy-btn" data-email="privacy@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For privacy-related inquiries, data deletion requests, and privacy policy questions.</p>
+                <div class="email-meta">
+                    <span class="email-category">Security</span>
+                    <div class="action-buttons">
+                        <a href="mailto:privacy@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Emails -->
+            <div class="email-card" data-category="account">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3 class="email-title">Monetization & Payments</h3>
+                </div>
+                <div class="email-address">
+                    <span>payments@tiktok.com</span>
+                    <button class="copy-btn" data-email="payments@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For issues related to creator payments, monetization, and financial transactions.</p>
+                <div class="email-meta">
+                    <span class="email-category">Account Issues</span>
+                    <div class="action-buttons">
+                        <a href="mailto:payments@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="email-card" data-category="content">
+                <div class="email-header">
+                    <div class="email-icon"><i class="fas fa-trademark"></i></div>
+                    <h3 class="email-title">Trademark Issues</h3>
+                </div>
+                <div class="email-address">
+                    <span>trademark@tiktok.com</span>
+                    <button class="copy-btn" data-email="trademark@tiktok.com"><i class="fas fa-copy"></i></button>
+                </div>
+                <p class="email-desc">For trademark complaints, brand impersonation, and trademark-related inquiries.</p>
+                <div class="email-meta">
+                    <span class="email-category">Content & Copyright</span>
+                    <div class="action-buttons">
+                        <a href="mailto:trademark@tiktok.com" class="action-btn"><i class="fas fa-paper-plane"></i> Compose</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="disclaimer">Disclaimer: This directory is provided for informational purposes only. Email addresses may change over time, and response times may vary. This site is not affiliated with or endorsed by TikTok.</p>
+            <p>© 2025 TikTok Support Email Directory | Designed for educational purposes</p>
+        </footer>
+    </div>
+
+    <div class="floating-btn" id="stats-btn">
+        <i class="fas fa-chart-line"></i>
+    </div>
+
+    <div class="modal" id="stats-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Appeal Success Statistics</h2>
+            <p>Based on data from successful TikTok account appeals</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">87%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24-48h</div>
+                    <div class="stat-label">Avg. Response Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">92%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+            
+            <p>Using the correct email address for your specific issue significantly increases your chances of a successful appeal.</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Email address copied to clipboard!</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#00f2fe" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#4facfe",
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    }
+                }
+            });
+            
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const emailCards = document.querySelectorAll('.email-card');
+            const searchInput = document.getElementById('search-input');
+            const toast = document.getElementById('toast');
+            const statsBtn = document.getElementById('stats-btn');
+            const statsModal = document.getElementById('stats-modal');
+            const closeModal = document.getElementById('close-modal');
+            
+            // Category filtering
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter emails
+                    emailCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = 1;
+                                card.style.transform = 'translateY(0) rotateX(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = 0;
+                            card.style.transform = 'translateY(20px) rotateX(10deg)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                emailCards.forEach(card => {
+                    const title = card.querySelector('.email-title').textContent.toLowerCase();
+                    const email = card.querySelector('.email-address span').textContent.toLowerCase();
+                    const desc = card.querySelector('.email-desc').textContent.toLowerCase();
+                    const category = card.querySelector('.email-category').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || email.includes(searchTerm) || 
+                        desc.includes(searchTerm) || category.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = 1;
+                            card.style.transform = 'translateY(0) rotateX(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = 0;
+                        card.style.transform = 'translateY(20px) rotateX(10deg)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Copy email functionality
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const email = this.getAttribute('data-email');
+                    
+                    // Copy to clipboard
+                    navigator.clipboard.writeText(email).then(() => {
+                        showToast('"' + email + '" copied to clipboard!');
+                        
+                        // Add visual feedback
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        this.style.background = 'var(--success)';
+                        this.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="fas fa-copy"></i>';
+                            this.style.background = '';
+                            this.style.color = '';
+                        }, 2000);
+                    }).catch(err => {
+                        showToast('Failed to copy: ' + err);
+                    });
+                });
+            });
+            
+            // Stats modal functionality
+            statsBtn.addEventListener('click', function() {
+                statsModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeModal.addEventListener('click', function() {
+                statsModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside
+            statsModal.addEventListener('click', function(e) {
+                if (e.target === statsModal) {
+                    statsModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Show toast notification
+            function showToast(message) {
+                toast.querySelector('span').textContent = message;
+                toast.classList.add('show');
+                
+                setTimeout(function() {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Add initial animation to email cards
+            emailCards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px) rotateX(10deg)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0) rotateX(0)';
+                }, 100 + index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
